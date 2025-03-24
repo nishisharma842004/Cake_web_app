@@ -29,11 +29,7 @@ const Header = ({ isUserAuthenticated }) => {
             Contact
           </Link>
         )}
-        {user?.role === "user" && (
-          <Link className="underline" to="/feedback">
-            Feedback
-          </Link>
-        )}
+       
 
         <Link className="underline" to="/about">
           About
@@ -46,6 +42,12 @@ const Header = ({ isUserAuthenticated }) => {
         <Link className="svg-icon" to={isUserAuthenticated ? "/me" : "/login"}>
           {isUserAuthenticated ? <FaUser /> : <FiLogIn />}
         </Link>
+
+        {user?.role === "user" && (
+          <Link className="underline" to="/feedback">
+            Feedback
+          </Link>
+        )}
       </div>
     </nav>
   );
