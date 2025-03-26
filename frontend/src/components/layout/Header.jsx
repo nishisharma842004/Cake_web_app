@@ -48,7 +48,7 @@ const Header = ({ isUserAuthenticated }) => {
           {isUserAuthenticated ? <FaUser /> : <FiLogIn />}
         </Link>
 
-        {user?.role === "admin" && (
+        {user?.role === "user" && (
           <Link className="underline" to="/feedback">
             Feedback
           </Link>
