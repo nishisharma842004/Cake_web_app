@@ -44,8 +44,23 @@ const userSchema = new mongoose.Schema({
   role: {
     type: String,
     enum: ["admin", "user"],
-    default: "user", // default should be "user", not "admin"
+    default: "user",
   },
+  specialDates: [
+    {
+      occasion: {
+        type: String,
+        required: true,
+      },
+      date: {
+        type: Date,
+        required: true,
+      },
+      description: {
+        type: String,
+      },
+    },
+  ],
   createdAt: {
     type: Date,
     default: Date.now,

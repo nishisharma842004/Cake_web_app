@@ -115,7 +115,7 @@ export const myProfile = (req, res, next) => {
 
 // 📝 Register New User
 export const registerUser = asyncError(async (req, res, next) => {
-  const { name, username, password, role } = req.body;
+  const { name, username, password, role, specialDates } = req.body;
 
   // Check for existing user
   const existingUser = await User.findOne({ username });
@@ -123,7 +123,7 @@ export const registerUser = asyncError(async (req, res, next) => {
     return res.status(400).json({ success: false, message: "Username already exists" });
   }
 
-  const user = new User({ name, username, password, role });
+  const user = new User({ name, username, password, role, specialDates });
   await user.save();
 
   const token = jwt.sign({ username, role }, process.env.JWT_SECRET, {
@@ -201,4 +201,16 @@ export const contactForm = asyncError(async (req, res, next) => {
 export const adminForm = asyncError(async (req, res, next) => {
   const messages = await Contact.find({}).sort({ createdAt: -1 });
   res.status(200).json({ success: true, messages });
+});
+
+// 🎉 Save Special Date
+export const saveSpecialDate = asyncError(async (req, res, next) => {
+  const { occasion, date, description } = req.body;
+  const userId = req.user._id;
+
+  const user = await User.findById(userId);
+  user.specialDates.push({ occasion, date, description });
+  await user.save();
+
+  res.status(200).json({ success: true, message: "Special date saved!" });
 });

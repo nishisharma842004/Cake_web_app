@@ -30,6 +30,11 @@ const Header = ({ isUserAuthenticated }) => {
           </Link>
         )}
        
+        {user?.role === "user" && (
+  <Link className="underline" to="/special-dates">
+    Special Dates
+  </Link>
+)}
 
         <Link className="underline" to="/about">
           About
@@ -43,7 +48,7 @@ const Header = ({ isUserAuthenticated }) => {
           {isUserAuthenticated ? <FaUser /> : <FiLogIn />}
         </Link>
 
-        {user?.role === "user" && (
+        {user?.role === "admin" && (
           <Link className="underline" to="/feedback">
             Feedback
           </Link>

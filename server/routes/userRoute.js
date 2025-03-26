@@ -41,6 +41,7 @@ import {
   loginUser,
   contactForm,
   adminForm,
+  saveSpecialDate, // ✅ Imported here
 } from "../controllers/userController.js";
 
 import {
@@ -57,6 +58,9 @@ router.get("/me", authenticateToken, myProfile);
 
 // 👉 Feedback/Contact Route (Protected)
 router.post("/contact", authenticateToken, contactForm);
+
+// 👉 Add Special Date Route (Protected)
+router.post("/special-dates", authenticateToken, saveSpecialDate); // ✅ Added here
 
 // 👉 Admin Routes (Protected & Admin Only)
 router.get("/admin/users", authenticateToken, authorizeAdmin, getAdminUsers);

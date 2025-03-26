@@ -18,6 +18,7 @@ import OrderDetails from "./components/MyOrders/OrderDetails";
 import Dashboard from "./components/admin/Dashboard";
 import Users from "./components/admin/Users";
 import Orders from "./components/admin/Orders";
+import SpecialDatesForm from "./components/SpecialDatesForm";
 import Notfound from "./components/layout/Notfound";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
@@ -37,6 +38,8 @@ import "./styles/cart.scss";
 import "./styles/shipping.scss";
 import "./styles/confirmorder.scss";
 import "./styles/paymentSuccess.scss";
+import "./styles/specialDatesForms.scss"; // ✅ Now it will work
+
 import "./styles/login.scss";
 import "./styles/signup.scss";
 import "./styles/profile.scss";
@@ -79,6 +82,7 @@ function App() {
         <Route path="/about" element={<About />} />
         <Route path="/cart" element={<Cart />} />
         <Route path="/feedback" element={<Feedback />} />
+        <Route path="/special-dates" element={<SpecialDatesForm />} />
         <Route path="/paymentsuccess" element={<PaymentSuccess />} />
 
         <Route
