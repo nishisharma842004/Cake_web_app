@@ -1,5 +1,5 @@
 import React from "react";
-import { AiFillInstagram, AiFillLinkedin, AiFillGithub } from "react-icons/ai";
+import { AiFillGithub, AiFillLinkedin } from "react-icons/ai";
 
 const Footer = () => {
   return (
@@ -14,19 +14,15 @@ const Footer = () => {
       </div>
 
       <aside>
-        <h4>Follow Both of us </h4>
+        <h4>Follow me </h4>
         <div>
-          <a href="https://www.linkedin.com/in/pragya-verma-a367631b3/">
-            <AiFillLinkedin />
-          </a>
+          
            <a href="https://www.linkedin.com/in/nishi-sharma-488825291/">
             <AiFillLinkedin />
           </a>
           
 
-          <a href="https://github.com/impragyaverma">
-            <AiFillGithub />
-          </a>
+         
           <a href="https://github.com/nishisharma842004">
             <AiFillGithub />
           </a>

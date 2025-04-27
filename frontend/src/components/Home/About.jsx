@@ -34,11 +34,11 @@ const About = () => {
           <article>
             <div className="founder-details">
               <img src={founderImage} alt="Founders" className="founder-image" />
-              <h3>Pragya Verma</h3>
+              <h3>Nishi Sharma</h3>
             </div>
 
             <p>
-              I am Pragya Verma, the proud founder of The Cake
+              I am Nishi Sharma, the proud founder of The Cake
               Shop. Our mission is to spread joy and sweetness across India
               with every cake and gift delivered. Affiliated with the ultimate
               standard of taste and quality, we’re here to make every occasion
